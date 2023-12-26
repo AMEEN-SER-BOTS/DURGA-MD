@@ -6,8 +6,8 @@ var number = text.split`@`[1]
 }else if(!isNaN(text)) {
 var number = text
 }
-if(!text && !m.quoted) return conn.reply(m.chat, `Use The Following *🤍 MAGIC MOA 🤍* Command \n *${usedPrefix + command}* @tag  _(or reply to a message)_`, m)
-if(number.length > 13 || (number.length < 11 && number.length > 0)) return conn.reply(m.chat, ` Number Incorrect Identify By *🤍 MAGIC MOA 🤍*`, m)
+if(!text && !m.quoted) return conn.reply(m.chat, `✳️ Using the command \n *${usedPrefix + command}* @tag  (or reply to a message)`, m)
+if(number.length > 13 || (number.length < 11 && number.length > 0)) return conn.reply(m.chat, `✳️ Number incorrect`, m)
 try {
 if(text) {
 var user = number + '@s.whatsapp.net'
@@ -19,11 +19,11 @@ var user = number + '@s.whatsapp.net'
 } catch (e) {
 } finally {
 conn.groupParticipantsUpdate(m.chat, [user], 'promote')
-m.reply(`🕊️ User Promoted By *🤍 MAGIC MOA 🤍*`)
+m.reply(`User Promoted🥳`)
 }}
 handler.help = ['promote']
 handler.tags = ['group']
-handler.command = ['promote'] 
+handler.command = ['promote', 'promover'] 
 handler.group = true
 handler.admin = true
 handler.botAdmin = true
