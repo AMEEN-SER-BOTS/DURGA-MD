@@ -293,8 +293,8 @@ let lkr = `
 conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, false, { mentions: [who] })
 m.react('🤍')
 }
-handler.help = ['help']
+handler.help = ['menu']
 handler.tags = ['main']
-handler.command = ['Command', 'help'] 
+handler.command = ['Command', 'menu'] 
 
 export default handler
