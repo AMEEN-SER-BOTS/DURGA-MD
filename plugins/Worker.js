@@ -1,17 +1,18 @@
-import { exec } from 'child_process';
-import now from 'performance-now';
+import { exec } from 'child_process'
+import speed from 'performance-now'
 
 let handler = async (m, { conn }) => {
-  let pingMsg = await conn.sendMessage(m.chat, { text: '*_Loading..._*' });
 
-  let timestamp = now();
+  let pingMsg = await conn.sendMessage(m.chat, {text: '*_Loading..._*'})
 
-  exec('neofetch --stdout', async (error, stdout) => {
-    let latency = (now() - timestamp).toFixed(4);
+  let timestamp = speed()
 
-    await conn.sendMessage(m.chat, { text: '*workers*', media: conn.serializeMMS({ url: 'https://i.imgur.com/iQJ41a4.mp4' }) });
+  await exec('neofetch --stdout', async (error, stdout) => {
 
-    await conn.relayMessage(m.chat, {
+    let latency = (speed() - timestamp).toFixed(4)
+
+    await conn.sendMessage(m.chat, {media: conn.serializeMMS({ url: 'https://i.imgur.com/iQJ41a4.mp4' }) });
+      await conn.relayMessage(m.chat, {
       protocolMessage: {
         key: pingMsg.key,
         type: 14,
@@ -24,7 +25,7 @@ let handler = async (m, { conn }) => {
 │         
 └┬❖ 「 *⚠️ WORKERS* 」
    │
-   │☞ *Plugins By:* 𝛪𝛭𝛲𝑈                  𝑆𝛯𝑅
+   │☞ *Plugins By:* *𝛪𝛭𝛲𝑈                  𝑆𝛯𝑅*
    │
    │ wa.me/918848377746
    │
@@ -35,12 +36,14 @@ let handler = async (m, { conn }) => {
 └─────────────┈ ⳹` 
         }
       }
-    }, {});
-  });
-};
+    }, {})
 
-handler.help = ['ping'];
-handler.tags = ['main'];
-handler.command = ['work', 'worker'];
+  })
 
-export default handler;
+}
+
+handler.help = ['ping']
+handler.tags = ['main']
+handler.command = ['work', 'worker'] 
+
+export default handler
