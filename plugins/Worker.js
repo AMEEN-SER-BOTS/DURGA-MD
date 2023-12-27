@@ -11,7 +11,7 @@ let handler = async (m, { conn }) => {
 
     let latency = (speed() - timestamp).toFixed(4)
 
-    await conn.sendMessage(m.chat, {media: conn.serializeMMS({ url: 'https://i.imgur.com/iQJ41a4.mp4' }) });
+  
       await conn.relayMessage(m.chat, {
       protocolMessage: {
         key: pingMsg.key,
