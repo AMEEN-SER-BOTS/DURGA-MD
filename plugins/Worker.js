@@ -11,8 +11,7 @@ let handler = async (m, { conn }) => {
 
     let latency = (speed() - timestamp).toFixed(4)
 
-
-      await conn.relayMessage(m.chat, {
+    await conn.relayMessage(m.chat, {
       protocolMessage: {
         key: pingMsg.key,
         type: 14,
@@ -25,7 +24,7 @@ let handler = async (m, { conn }) => {
 │         
 └┬❖ 「 *⚠️ WORKERS* 」
    │
-   │☞ *Plugins By:* *𝛪𝛭𝛲𝑈                  𝑆𝛯𝑅*
+   │☞ *Plugins By:* _Adhul-Ser_
    │
    │ wa.me/918848377746
    │
