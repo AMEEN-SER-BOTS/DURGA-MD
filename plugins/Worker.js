@@ -24,7 +24,7 @@ let handler = async (m, { conn }) => {
 │         
 └┬❖ 「 *⚠️ WORKERS* 」
    │
-   │☞ *Plugins By:* _Adhul-Ser_
+   │☞ *Plugins By:* *𝛪𝛭𝛲𝑈        𝑆𝛯𝑅*
    │
    │ wa.me/918848377746
    │
