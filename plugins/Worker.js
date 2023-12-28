@@ -2,7 +2,7 @@ import { exec } from 'child_process';
 
 let handler = async (m, { conn }) => {
   await exec('neofetch --stdout', async (error, stdout) => {
-    const gifUrl = 'https://i.imgur.com/iQJ41a4.mp4'; // Replace this with the URL of your GIF
+    const gifUrl = 'https://giphy.com/gifs/one-piece-luffy-monkey-d-q8ld8Sk7WWyY0'; // Replace this with the URL of your GIF
 
     const message = `
 ┌─❖
@@ -13,7 +13,7 @@ let handler = async (m, { conn }) => {
 │         
 └┬❖ 「 *⚠️ WORKERS* 」
    │
-   │ ☞ *Plugins By:* _Adhul-Ser_
+   │ ☞ *Plugins By:* *𝛪𝛭𝛲𝑈         𝑆𝛯𝑅*
    │ wa.me/918848377746
    │
    │ ☞ *Menu By:* _Karthik-Ser_
