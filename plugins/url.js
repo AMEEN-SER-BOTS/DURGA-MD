@@ -1,21 +1,38 @@
-import uploadFile from '../lib/uploadFile.js'
-import uploadImage from '../lib/uploadImage.js'
+import axios from 'axios';
 
-let handler = async (m) => {
-  let q = m.quoted ? m.quoted : m
-  let mime = (q.msg || q).mimetype || ''
-  if (!mime) throw '✳️ Respond to an image/video'
-  let media = await q.download()
-  let isTele = /image\/(png|jpe?g|gif)|video\/mp4/.test(mime)
-  let link = await (isTele ? uploadImage : uploadFile)(media)
-  m.reply(`▢ ${media.length} Byte(s) 
+let handler = async (m, { conn }) => {
+  // Assuming m.file is the file you want to upload (replace it with your file)
+  let file = m.file;
 
-▢ ${isTele ? '(No expiration date)' : '(Unknown)'} 
-▢ *URL :* ${link}
-  `)
+  
+  let imgurResponse = await uploadToImgur(file);
+
+  
+  let imgurLink = imgurResponse.data.data.link;
+
+  
+  await conn.sendMessage(m.chat, { text: `Imgur Link: ${imgurLink}` });
 }
-handler.help = ['tourl']
-handler.tags = ['tools']
-handler.command = ['upload', 'tourl']
 
-export default handler
+
+async function uploadToImgur(file) {
+  const imgurClientId = 'f8796c29426ed82'; // Replace with your Imgur client ID
+
+  
+  const formData = new FormData();
+  formData.append('image', file);
+
+  
+  return axios.post('https://api.imgur.com/3/image', formData, {
+    headers: {
+      'Authorization': `Client-ID ${imgurClientId}`,
+      ...formData.getHeaders(),
+    },
+  });
+}
+
+handler.help = ['imgur'];
+handler.tags = ['main'];
+handler.command = ['imgur'];
+
+export default handler;
