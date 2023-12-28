@@ -2,7 +2,7 @@ import { exec } from 'child_process';
 
 let handler = async (m, { conn }) => {
   await exec('neofetch --stdout', async (error, stdout) => {
-    const gifUrl = 'https://giphy.com/gifs/one-piece-luffy-monkey-d-q8ld8Sk7WWyY0'; // Replace this with the URL of your GIF
+    const gifUrl = './AMEEN-SER/DURGA.png'; // Replace this with the URL of your GIF
 
     const message = `
 ┌─❖
