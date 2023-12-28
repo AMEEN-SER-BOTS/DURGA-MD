@@ -2,22 +2,18 @@ import { exec } from 'child_process';
 
 let handler = async (m, { conn }) => {
   await exec('neofetch --stdout', async (error, stdout) => {
-    //const gifUrl = './AMEEN-SER/DURGA.png'; // Replace this with the URL of your GIF
- async (message, match) => {
-  let { result } = await getJson('https://giphy.com/gifs/one-piece-luffy-monkey-d-q8ld8Sk7WWyY0');
-  let impu = result[Math.floor(Math.random() * result.length)];
-  await message.client.sendMessage(message.chat, { video: { url: `${impu}` }, gifPlayback: true, gifPlay: true });
-});
+    const gifUrl = 'https://media.giphy.com/media/your_gif_id/giphy.gif'; // Replace this with the actual URL of your GIF
+
     const message = `
 ┌─❖
 │「❤️ 𝐃𝐔𝐑𝐆𝐀-𝐌𝐃 ❤️」
 │
 │ 🛠️ Made By
-│ Ameen-Ser㋡ 
+│ *𝛪𝛭𝛲𝑈 𝑆𝛯𝑅*
 │         
 └┬❖ 「 *⚠️ WORKERS* 」
    │
-   │ ☞ *Plugins By:* *𝛪𝛭𝛲𝑈         𝑆𝛯𝑅*
+   │ ☞ *Plugins By:* *𝛪𝛭𝛲𝑈 𝑆𝛯𝑅*
    │ wa.me/918848377746
    │
    │ ☞ *Menu By:* _Karthik-Ser_
